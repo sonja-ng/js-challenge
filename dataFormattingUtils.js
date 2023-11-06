@@ -8,8 +8,8 @@ export function formatBook(book) {
 }
 
 export function formatTitle(title) {
-  const articles = new Set(["The", "A", "An"]);
-  const titleArr = title.split(" ");
+  const articles = new Set(["the", "a", "an"]);
+  const titleArr = title.toLowerCase().split(" ");
 
   return articles.has(titleArr[0])
     ? titleArr.slice(1).join(" ")
@@ -21,7 +21,8 @@ function formatDate(date) {
 }
 
 export function formatName(name) {
-  return name.toLowerCase().split(" ").reverse().join(" ");
+  const nameArr = name.toLowerCase().split(" ");
+  return nameArr.length < 2 ? nameArr.join("") : nameArr.reverse().join(" ");
 }
 
 export function formatRating(rating) {

@@ -165,14 +165,15 @@ describe("sortBooksByColumns", () => {
   });
 
   test("handles empty book input", () => {
+    const emptyBooksInput = [];
     const columns = [["title", false]];
-    const sortedBooks = sortBooksByColumns([], columns);
+    const sortedBooks = sortBooksByColumns(emptyBooksInput, columns);
     expect(sortedBooks).toEqual([]);
   });
 
   test("handles empty column input", () => {
-    const columns = [];
-    const sortedBooks = sortBooksByColumns(unsortedInput, columns);
+    const emptyColumns = [];
+    const sortedBooks = sortBooksByColumns(unsortedInput, emptyColumns);
     expect(sortedBooks).toEqual(unsortedInput);
   });
 });

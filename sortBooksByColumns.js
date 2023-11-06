@@ -1,6 +1,6 @@
 import { formatBook } from "./dataFormattingUtils.js";
 
-const sortBooksByColumns = (books, columns) => {
+const sortBooksByColumns = (books, columns=[]) => {
   if (!books.length || !columns.length) return books;
 
   return [...books].sort((book1, book2) => {
@@ -10,12 +10,12 @@ const sortBooksByColumns = (books, columns) => {
     for (const column of columns) {
       const [columnKey, isAsc] = column;
 
-      const comparator = isAsc ? 1 : -1;
+      const sortOrder = isAsc ? 1 : -1;
 
       if (formattedBook1[columnKey] < formattedBook2[columnKey])
-        return -1 * comparator;
+        return -1 * sortOrder;
       if (formattedBook1[columnKey] > formattedBook2[columnKey])
-        return 1 * comparator;
+        return 1 * sortOrder;
     }
     return 0;
   });
