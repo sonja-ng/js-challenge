@@ -1,4 +1,4 @@
-import sortBooksByColumns from '../sortBooksByColumns.js'; 
+import sortBooksByColumns from "../sortBooksByColumns.js";
 
 const unsortedInput = [
   {
@@ -56,7 +56,7 @@ describe("sortBooksByColumns", () => {
         publicationDate: "January 22 2000",
         author: "Stephen King",
         rating: "5",
-      },
+      }
     ]);
   });
   test("handles sorting by multiple columns and orders", () => {
@@ -91,7 +91,7 @@ describe("sortBooksByColumns", () => {
         publicationDate: "January 22 2000",
         author: "Stephen King",
         rating: "5",
-      },
+      }
     ]);
   });
 
@@ -127,14 +127,12 @@ describe("sortBooksByColumns", () => {
         publicationDate: "January 22 2000",
         author: "Stephen King",
         rating: "5",
-      },
+      }
     ]);
   });
 
   test("ignores articles when sorting by title", () => {
-    const columns = [
-      ["title", true],
-    ];
+    const columns = [["title", true]];
 
     const sortedBooks = sortBooksByColumns(unsortedInput, columns);
 
@@ -162,19 +160,19 @@ describe("sortBooksByColumns", () => {
         publicationDate: "January 22 2000",
         author: "Stephen King",
         rating: "5",
-      },
+      }
     ]);
   });
 
-  test('handles empty book input', ()=>{
-    const columns = [["title", false]]
+  test("handles empty book input", () => {
+    const columns = [["title", false]];
     const sortedBooks = sortBooksByColumns([], columns);
     expect(sortedBooks).toEqual([]);
-  })
+  });
 
-  test('handles empty column input', ()=>{
+  test("handles empty column input", () => {
     const columns = [];
     const sortedBooks = sortBooksByColumns(unsortedInput, columns);
     expect(sortedBooks).toEqual(unsortedInput);
-  })
+  });
 });
