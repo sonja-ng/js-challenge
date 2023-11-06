@@ -1,5 +1,4 @@
-import { formatBook } from './dataFormattingUtils.js';
-import booksInput from './booksInput.js';
+import { formatBook } from "./dataFormattingUtils.js";
 
 const sortBooksByColumns = (books, columns) => {
   if (!books.length || !columns.length) return books;
@@ -21,26 +20,5 @@ const sortBooksByColumns = (books, columns) => {
     return 0;
   });
 };
-
-console.log(
-  "Sort books by publication date(desc) then author name(asc):",
-  sortBooksByColumns(booksInput, [
-    ["publicationDate", false],
-    ["author", true],
-  ])
-);
-
-console.log(
-  "Sort books by rating(asc) then title(asc):",
-  sortBooksByColumns(booksInput, [
-    ["rating", true],
-    ["title", true],
-  ])
-);
-
-console.log(
-  "Sort books by title(desc):",
-  sortBooksByColumns(booksInput, [["title", false]])
-);
 
 export default sortBooksByColumns;
