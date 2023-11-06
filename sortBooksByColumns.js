@@ -1,5 +1,5 @@
-const { formatBook } = require("./dataFormattingUtils");
-const booksInput = require("./booksInput");
+import { formatBook } from './dataFormattingUtils.js';
+import booksInput from './booksInput.js';
 
 const sortBooksByColumns = (books, columns) => {
   if (!books.length || !columns.length) return books;
@@ -9,7 +9,7 @@ const sortBooksByColumns = (books, columns) => {
     const formattedBook2 = formatBook(book2);
 
     for (const column of columns) {
-      [columnKey, isAsc] = column;
+      const [columnKey, isAsc] = column;
 
       const comparator = isAsc ? 1 : -1;
 
@@ -43,4 +43,4 @@ console.log(
   sortBooksByColumns(booksInput, [["title", false]])
 );
 
-module.exports = sortBooksByColumns;
+export default sortBooksByColumns;

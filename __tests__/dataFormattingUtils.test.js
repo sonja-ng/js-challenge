@@ -1,8 +1,8 @@
-const {
+import {
   formatName,
   formatRating,
   formatTitle,
-} = require("../dataFormattingUtils");
+} from "../dataFormattingUtils.js";
 
 describe("formatName", () => {
   test("downcases and reverses first and last name", () => {
@@ -15,10 +15,10 @@ describe("formatName", () => {
 
 describe("formatRating", () => {
   test("converts rating string to number", () => {
-    const rating = "5";
+    const rating = "4.5";
     const formattedRating = formatRating(rating);
 
-    expect(formattedRating).toEqual(5);
+    expect(formattedRating).toEqual(4.5);
   });
 
   test('converts "no rating" to 6', () => {

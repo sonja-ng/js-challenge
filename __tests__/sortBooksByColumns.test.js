@@ -1,4 +1,4 @@
-const sortBooksByColumns = require("../sortBooksByColumns"); 
+import sortBooksByColumns from '../sortBooksByColumns.js'; 
 
 const unsortedInput = [
   {
@@ -95,7 +95,7 @@ describe("sortBooksByColumns", () => {
     ]);
   });
 
-  test("sort books by specified columns in descending order", () => {
+  test("sorts books by specified columns in descending order", () => {
     const columns = [
       ["publicationDate", false],
       ["author", false],

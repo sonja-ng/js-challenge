@@ -1,4 +1,4 @@
-function formatBook(book) {
+export function formatBook(book) {
   return {
     title: formatTitle(book.title),
     publicationDate: formatDate(book.publicationDate),
@@ -7,7 +7,7 @@ function formatBook(book) {
   };
 }
 
-function formatTitle(title) {
+export function formatTitle(title) {
   const articles = new Set(["The", "A", "An"]);
   const titleArr = title.split(" ");
 
@@ -20,12 +20,10 @@ function formatDate(date) {
   return new Date(date);
 }
 
-function formatName(name) {
+export function formatName(name) {
   return name.toLowerCase().split(" ").reverse().join(" ");
 }
 
-function formatRating(rating) {
+export function formatRating(rating) {
   return rating === "no rating" ? 6 : Number(rating);
 }
-
-module.exports = { formatBook, formatTitle, formatName, formatRating };

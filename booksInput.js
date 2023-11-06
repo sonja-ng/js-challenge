@@ -43,4 +43,4 @@ const booksInput = [
   }
 ];
 
-module.exports = booksInput;
+export default booksInput;
