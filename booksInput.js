@@ -40,7 +40,7 @@ const booksInput = [
     publicationDate: "August 3 2021",
     author: "Stephen King",
     rating: "4.8",
-  },
+  }
 ];
 
 module.exports = booksInput;
